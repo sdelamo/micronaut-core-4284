@@ -13,6 +13,7 @@ repositories {
 }
 
 micronaut {
+    runtime 'lambda'
     testRuntime "spock2"
     processing {
         incremental true
