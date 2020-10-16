@@ -1,6 +1,6 @@
 plugins {
     id "groovy"
-    id "com.github.johnrengelman.shadow" version "6.0.0"
+    id "com.github.johnrengelman.shadow" version "6.1.0"
     id "io.micronaut.library" version '1.0.5'
 }
 
@@ -13,6 +13,7 @@ repositories {
 }
 
 micronaut {
+    runtime 'lambda'
     testRuntime "spock2"
     processing {
         incremental true
@@ -36,6 +37,10 @@ java {
     targetCompatibility = JavaVersion.toVersion('11')
 }
 
+
+shadowJar {
+    mergeServiceFiles()
+}
 
 
 
